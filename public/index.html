@@ -10,14 +10,16 @@
 
 <body>
 
-  <h1>HTML Rendered</h1>
   <div class="container">
-
+    
+    <h1>HTML Rendered</h1>
+    
     <div id='data' class='mx-5 my-5'></div>
 
   </div>
 
-  <script src="socket.io/socket.io.js"></script>
+  <!-- <script src="/socket.io/socket.io.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.1/socket.io.js" integrity="sha512-AcZyhRP/tbAEsXCCGlziPun5iFvcSUpEz2jKkx0blkYKbxU81F+iq8FURwPn1sYFeksJ+sDDrI5XujsqSobWdQ==" crossorigin="anonymous"></script>
 
   <script>
     const socket = io();
