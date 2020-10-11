@@ -1,6 +1,8 @@
 const path = require('path');
 const express = require('express');
+const SocketIO = require('socket.io');
 const app = express();
+const http = require('http');
 
 // settings
 app.set('port', process.env.PORT || 3003);
@@ -9,13 +11,12 @@ app.set('port', process.env.PORT || 3003);
 app.use( express.static( path.join(__dirname, 'public') ) );
 
 // start server;;
-const server = app.listen(app.get('port'), () => {
+const server = http.createServer(app).listen(app.get('port'), () => {
   console.log("====== SERVER ON PORT", app.get('port'), "=================");
 } );
 
 // start Socket
-const SocketIO = require('socket.io');
-const io = SocketIO(server).listen(server);
+const io = SocketIO(server);
 
 // array of clients
 let clients = [];
