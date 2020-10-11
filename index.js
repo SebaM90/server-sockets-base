@@ -15,7 +15,7 @@ const server = app.listen(app.get('port'), () => {
 
 // start Socket
 const SocketIO = require('socket.io');
-const io = SocketIO(server);
+const io = SocketIO(server).listen(server);
 
 // array of clients
 let clients = [];
