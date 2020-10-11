@@ -1,8 +1,8 @@
 const path = require('path');
 const express = require('express');
 const SocketIO = require('socket.io');
-const app = express();
 const http = require('http');
+const app = express();
 
 // settings
 app.set('port', process.env.PORT || 3003);
@@ -16,7 +16,7 @@ const server = http.createServer(app).listen(app.get('port'), () => {
 } );
 
 // start Socket
-const io = SocketIO(server);
+const io = SocketIO.listen(server);
 
 // array of clients
 let clients = [];
