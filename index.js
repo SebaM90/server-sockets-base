@@ -26,7 +26,7 @@ let clients = [];
 io.on('connection', (socket) => {
 
   // save client
-  clients.push( `${socket.id} (${socket.request.connection.remoteAddress})` );
+  clients.push( `${socket.id} ➜ ${socket.request.connection.remoteAddress}` );
 
   console.log("New user:",socket.id, socket.request.connection.remoteAddress);
 
