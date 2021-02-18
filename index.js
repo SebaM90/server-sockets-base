@@ -26,10 +26,15 @@ let clients = [];
 io.on('connection', (socket) => {
 
   // save client
-  clients.push(socket.id);
+  clients.push( `${socket.id} ➜ ${socket.request.connection.remoteAddress}` );
 
+  console.log("New user:",socket.id, socket.request.connection.remoteAddress);
+
+<<<<<<< HEAD
   console.log("New user:",socket.id);
   console.log(socket.request.connection.remoteAddress);
+=======
+>>>>>>> d710465f4821a991ffee134ffe4653f18bda16fe
 
   socket.on('disconnect', function() {
       clients.splice(clients.indexOf(socket), 1);

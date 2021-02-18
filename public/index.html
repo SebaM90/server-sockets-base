@@ -12,14 +12,14 @@
 
   <div class="container">
     
-    <h1>HTML Rendered</h1>
+    <h1>Realtime With SocketIO</h1>
     
     <div id='data' class='mx-5 my-5'></div>
 
   </div>
 
-  <!-- <script src="/socket.io/socket.io.js"></script> -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.1/socket.io.js" integrity="sha512-AcZyhRP/tbAEsXCCGlziPun5iFvcSUpEz2jKkx0blkYKbxU81F+iq8FURwPn1sYFeksJ+sDDrI5XujsqSobWdQ==" crossorigin="anonymous"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.1/socket.io.js" integrity="sha512-AcZyhRP/tbAEsXCCGlziPun5iFvcSUpEz2jKkx0blkYKbxU81F+iq8FURwPn1sYFeksJ+sDDrI5XujsqSobWdQ==" crossorigin="anonymous"></script> -->
 
   <script>
     const socket = io();
@@ -30,8 +30,8 @@
         <h2>• People watching this web: ${data.length}</h2>
         <hr>
         <h4>
-          <p>• List of ID's connections:</p>
-          <code>${data}</code>
+          <pre>      ID     →      IP </pre>
+          <code><small>${data.join('<br>')}</small></code>
         </h4>
       `
       //document.write(data);
