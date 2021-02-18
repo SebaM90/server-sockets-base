@@ -30,11 +30,8 @@ io.on('connection', (socket) => {
 
   console.log("New user:",socket.id, socket.request.connection.remoteAddress);
 
-<<<<<<< HEAD
   console.log("New user:",socket.id);
-  console.log(socket.request.connection.remoteAddress);
-=======
->>>>>>> d710465f4821a991ffee134ffe4653f18bda16fe
+  console.log("└Remote Address:", socket.request.connection.remoteAddress);
 
   socket.on('disconnect', function() {
       clients.splice(clients.indexOf(socket), 1);
