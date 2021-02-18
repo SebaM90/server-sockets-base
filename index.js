@@ -29,6 +29,7 @@ io.on('connection', (socket) => {
   clients.push(socket.id);
 
   console.log("New user:",socket.id);
+  console.log(socket.request.connection.remoteAddress);
 
   socket.on('disconnect', function() {
       clients.splice(clients.indexOf(socket), 1);
